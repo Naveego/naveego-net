@@ -15,7 +15,7 @@
 using System;
 using Newtonsoft.Json.Linq;
 
-namespace Naveego.Data
+namespace Naveego
 {
     public class Connection
     {
@@ -31,7 +31,7 @@ namespace Naveego.Data
 
         public DateTime? StatusDate { get; set; }
         
-        public Reference Site { get; set; }
+        public Reference SyncClient { get; set; }
 
         public JObject Settings { get; set; }
 

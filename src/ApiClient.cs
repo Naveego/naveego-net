@@ -17,24 +17,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Naveego.Sync;
 
-namespace Naveego.Sync
+namespace Naveego
 {
-    public class NaveegoSyncApiClient : ApiClientBase
+    public class ApiClient : ApiClientBase
     {
-        protected override string BasePath
+
+        public PagedCollection<Connection> GetConnections(GetCollectionOptions options = null)
         {
-            get
+            options = options ?? new GetCollectionOptions();
+            var resourceUri = ToResourceUri("connections");
+            return ExecuteRequest<PagedCollection<Connection>>(resourceUri, new ApiRequestOptions
             {
-                return "sync";
-            }
+                GetCollectionOptions = options
+            });
         }
 
-        public PagedCollection<SyncClient> GetSyncClients()
+        public Connection GetConnection(Guid id)
         {
-            var resourceUri = ToResourceUri("clients");
-            return ExecuteRequest<PagedCollection<SyncClient>>(resourceUri);
+            var resourceUri = ToResourceUri(string.Format("connections/{0}", id));
+            return ExecuteRequest<Connection>(resourceUri);
         }
+
 
     }
 }

@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,7 @@
     <Compile Include="ApiClientBase.cs" />
     <Compile Include="ApiRequestOptions.cs" />
     <Compile Include="DataQuality\Category.cs" />
+    <Compile Include="DataQuality\DataQualityApiClient.cs" />
     <Compile Include="DataQuality\Object.cs" />
     <Compile Include="DataQuality\Property.cs" />
     <Compile Include="DataQuality\Query.cs" />
@@ -55,19 +57,21 @@
     <Compile Include="DataQuality\RunException.cs" />
     <Compile Include="DataQuality\RunSchedule.cs" />
     <Compile Include="DataQuality\Tag.cs" />
-    <Compile Include="Data\Connection.cs" />
-    <Compile Include="NaveegoApiClient.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ApiClient.cs" />
+    <Compile Include="GetCollectionOptions.cs" />
     <Compile Include="PagedCollection.cs" />
     <Compile Include="PagedCollectionMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="ResourceMetadata.cs" />
-    <Compile Include="Sync\NaveegoSyncApiClient.cs" />
+    <Compile Include="Sync\SyncApiClientcs.cs" />
     <Compile Include="Sync\SyncClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

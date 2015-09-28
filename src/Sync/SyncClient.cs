@@ -31,5 +31,11 @@ namespace Naveego.Sync
 
         public DateTime InstallDate { get; set; }
 
+        public string AuthToken { get; set; }
+
+        public string ApiUrl { get; set; }
+
+        public string LiveUrl { get; set; }
+
     }
 }

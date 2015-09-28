@@ -55,10 +55,12 @@ namespace Naveego
             return ExecuteRequest<TResponse>(uri, options);
         }
 
-        protected TResponse ExecuteRequest<TResponse>(string uri, ApiRequestOptions options = null)
+        protected TResponse ExecuteRequest<TResponse>(string resourceUri, ApiRequestOptions options = null)
         {
+            var url = resourceUri;
             var serializer = GetSerializer();
             var requestOptions = options ?? new ApiRequestOptions();
+            var queryString = new Dictionary<string, string>();
             byte[] responseBytes;
             TResponse response = default(TResponse);
             
@@ -78,6 +80,37 @@ namespace Naveego
                     AuthenticateRequest(wc);
                 }
 
+                // If there are collection options defined
+                if (requestOptions.GetCollectionOptions != null)
+                {
+                    if(string.IsNullOrEmpty(requestOptions.GetCollectionOptions.Query)== false)
+                    {
+                        queryString["q"] = System.Web.HttpUtility.UrlEncode(requestOptions.GetCollectionOptions.Query);
+                    }
+
+                    if(requestOptions.GetCollectionOptions.Page != null)
+                    {
+                        queryString["page"] = requestOptions.GetCollectionOptions.Page.Value.ToString();
+                    }
+
+                    if(requestOptions.GetCollectionOptions.PageSize != null)
+                    {
+                        queryString["pagesize"] = requestOptions.GetCollectionOptions.PageSize.Value.ToString();
+                    }
+                }
+
+                if(queryString.Count > 0)
+                {
+                    url += "?";
+
+                    foreach(var p in queryString)
+                    {
+                        url += string.Format("{0}={1}&", p.Key, System.Web.HttpUtility.UrlEncode(p.Value));
+                    }
+
+                    url = url.Substring(0, url.Length - 1);
+                }
+
                 // If we are sending data then we need to upload it
                 if(requestOptions.Data != null)
                 {
@@ -87,12 +120,12 @@ namespace Naveego
                         byte[] sendBytes;
                         serializer.Serialize(jw, requestOptions.Data);
                         sendBytes = ms.ToArray();
-                        responseBytes = wc.UploadData(uri, requestOptions.Method, sendBytes);
+                        responseBytes = wc.UploadData(url, requestOptions.Method, sendBytes);
                     }
                 }
                 else
                 {
-                    responseBytes = wc.DownloadData(uri);
+                    responseBytes = wc.DownloadData(url);
                 }
 
                 if(responseBytes != null)
