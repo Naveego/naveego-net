@@ -9,7 +9,6 @@
     <licenseUrl>http://www.naveego.com/terms</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Naveego REST API Library</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>Naveego</tags>
     <dependencies>
