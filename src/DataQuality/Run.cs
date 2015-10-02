@@ -22,11 +22,27 @@ namespace Naveego.DataQuality
 
         public Guid Id { get; set; }
 
+        public string Status { get; set; }
+
+        public string Indicator { get; set; }
+
+        public string Severity { get; set; }
+
+        public string Impact { get; set; }
+
+        public string Class { get; set; }
+
+        public string Category { get; set; }
+
+        public string Object { get; set; }
+
+        public string Property { get; set; }
+
+        public string AssignedTo { get; set; }
+
         public DateTime ScheduleStart { get; set; }
 
         public DateTime StartedAt { get; set; }
-
-        public string Status { get; set; }
 
         public DateTime? FinishedAt { get; set; }
 
@@ -36,11 +52,21 @@ namespace Naveego.DataQuality
 
         public long QueryTime { get; set; }
 
-        public Reference Query { get; set; }
+        public bool Acknowledged { get; set; }
+
+        public string AcknowledgedBy { get; set; }
+
+        public DateTime? AcknowledgedOn { get; set; }
 
         public string QueryText { get; set; }
 
         public string CountQueryText { get; set; }
+
+        public string ErrorMessage { get; set; }
+
+        public RunTrend[] Trends { get; set; }
+
+        public Reference Query { get; set; }
 
         public Reference Rule { get; set; }
 
