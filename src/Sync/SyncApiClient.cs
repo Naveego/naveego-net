@@ -17,10 +17,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Naveego.Streams;
 
 namespace Naveego.Sync
 {
-    public class SyncApiClientcs : ApiClientBase
+    public class SyncApiClient : ApiClientBase
     {
 
         protected override string BasePath
@@ -46,6 +47,24 @@ namespace Naveego.Sync
         {
             var resourceUri = ToResourceUri(string.Format("clients/{0}", id));
             return ExecuteRequest<SyncClient>(resourceUri);
+        }
+
+        public PagedStreamResult<SyncStreamEvent> ReadSyncStream(Guid? start)
+        {
+            var resourceUri = string.Format("{0}/streams/sync", ApiUrl);
+
+            if(start != null)
+            {
+                resourceUri += "?start=" + start.ToString().ToLowerInvariant();
+            }
+
+            return ExecuteRequest<PagedStreamResult<SyncStreamEvent>>(resourceUri);
+        }
+
+        public StreamWindow GetSyncStreamWindow()
+        {
+            var resourceUri = string.Format("{0}/streamwindows/sync", ApiUrl);
+            return ExecuteRequest<StreamWindow>(resourceUri);
         }
 
 

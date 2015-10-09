@@ -24,6 +24,8 @@ namespace Naveego.DataQuality
 
         public string Status { get; set; }
 
+        public string State { get; set; }
+
         public string Indicator { get; set; }
 
         public string Severity { get; set; }
@@ -52,17 +54,19 @@ namespace Naveego.DataQuality
 
         public long QueryTime { get; set; }
 
-        public bool Acknowledged { get; set; }
+        public string StatusChangedBy { get; set; }
 
-        public string AcknowledgedBy { get; set; }
-
-        public DateTime? AcknowledgedOn { get; set; }
+        public DateTime? StatusChangedDate { get; set; }
 
         public string QueryText { get; set; }
 
         public string CountQueryText { get; set; }
 
         public string ErrorMessage { get; set; }
+
+        public string[] Tags { get; set; }
+
+        public string SupressedBy { get; set; }
 
         public RunTrend[] Trends { get; set; }
 
@@ -73,6 +77,5 @@ namespace Naveego.DataQuality
         public Reference Source { get; set; }
 
         public Reference SyncClient { get; set; }
-
     }
 }

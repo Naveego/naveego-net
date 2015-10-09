@@ -1,0 +1,190 @@
+﻿{
+    "count": 3,
+    "firstId": "23CE74D8-DE52-4A36-B5C3-A9AAB6158976",
+    "lastId":  "23CE74D8-DE52-4A36-B5C3-A9AAB6158976",
+    "events": [
+        {
+            "id": "69E7362B-E39A-4430-B41C-E35AF48D07F3",
+            "ts": "2015-10-08T20:22:33.399Z",
+            "key": "2e428c0d-760a-4e02-8b8e-a52b00fa827d",
+            "action": "update",
+            "contentType": "dataquality.rule",
+            "content": {
+                "_meta": {
+                    "createdOn": "2015-10-08T15:12:04.673Z",
+                    "createdBy": "admin",
+                    "modifiedOn": "2015-10-08T15:22:33.1595234Z",
+                    "modifiedBy": "admin"
+                },
+                "id": "2e428c0d-760a-4e02-8b8e-a52b00fa827d",
+                "name": "This is a test rule",
+                "description": "Test",
+                "status": "200",
+                "severity": "medium",
+                "dataOwner": "admin",
+                "class": "accuracy",
+                "impact": "department",
+                "category": "Test",
+                "object": null,
+                "property": null,
+                "queryCount": 0,
+                "tags": [
+
+                ],
+                "runCount": 0,
+                "lastRun": null,
+                "exceptionCount": 0,
+                "lastException": null
+            }
+        },
+        {
+            "id": "FB2F5D67-DDB9-4D65-B41B-92F8B4A18A39",
+            "ts": "2015-10-08T20:31:35.661Z",
+            "key": "8a65adf5-ea6a-4163-9117-0c547ade5b2e",
+            "action": "insert",
+            "contentType": "dataquality.query",
+            "content": {
+                "_meta": {
+                    "createdOn": "2015-10-08T15:31:35.3935237Z",
+                    "createdBy": "admin",
+                    "modifiedOn": "2015-10-08T15:31:35.3935237Z",
+                    "modifiedBy": "admin"
+                },
+                "id": "8a65adf5-ea6a-4163-9117-0c547ade5b2e",
+                "name": "Test Query",
+                "queryText": "SELECT * FROM Master.Department",
+                "countQueryText": "SELECT COUNT(*) as Count FROM Master.Department",
+                "keyColumn": "DepartmentId",
+                "labelColumn": "GroupName",
+                "descColumn": "Name",
+                "countColumn": "Count",
+                "schedule": {
+                    "description": "Daily @ 12:00 AM",
+                    "frequency": "Daily",
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "startPeriod": "AM",
+                    "weekdays": null,
+                    "cronSchedule": "0 0 0 1/1 * ? *"
+                },
+                "source": {
+                    "name": "Adventure Works",
+                    "key": "2922dc3c-018f-7c42-b989-f60ae4dd7ab0"
+                },
+                "rule": {
+                    "name": "This is a test rule",
+                    "key": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0"
+                },
+                "queryProperties": [
+                    {
+                        "name": "DepartmentId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "DBVersion",
+                        "type": "string"
+                    },
+                    {
+                        "name": "GroupName",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ModifiedDate",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ModifiedDate_xDateKey",
+                        "type": "string"
+                    },
+                    {
+                        "name": "ModifiedDate_xTimeKey",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Name",
+                        "type": "string"
+                    }
+                ],
+                "countQueryProperties": [
+                    {
+                        "name": "Count",
+                        "type": "string"
+                    }
+                ],
+                "runCount": 0,
+                "lastRun": null,
+                "nextRun": "0001-01-01T00:00:00Z",
+                "exceptionCount": 0,
+                "lastException": null
+            }
+        },
+        {
+            "id": "DFFA9ACC-5C45-4DD4-85F4-10AC4782A99D",
+            "ts": "2015-10-08T21:16:59.446Z",
+            "key": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
+            "action": "update",
+            "contentType": "dataquality.rule",
+            "content": {
+                "_meta": {
+                    "createdOn": "2015-10-08T15:09:56.795Z",
+                    "createdBy": "admin",
+                    "modifiedOn": "2015-10-08T16:16:59.259488Z",
+                    "modifiedBy": "admin"
+                },
+                "id": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
+                "name": "This is a test rule",
+                "description": "Test",
+                "status": "new",
+                "severity": "medium",
+                "dataOwner": "admin",
+                "class": "accuracy",
+                "impact": "department",
+                "category": "Test",
+                "object": null,
+                "property": null,
+                "queryCount": 1,
+                "tags": [
+
+                ],
+                "runCount": 0,
+                "lastRun": null,
+                "exceptionCount": 0,
+                "lastException": null
+            }
+        },
+        {
+            "id": "194004BB-0104-4D4E-AAED-3F222BA6D601",
+            "ts": "2015-10-08T21:17:52.634Z",
+            "key": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
+            "action": "update",
+            "contentType": "dataquality.rule",
+            "content": {
+                "_meta": {
+                    "createdOn": "2015-10-08T15:09:56.795Z",
+                    "createdBy": "admin",
+                    "modifiedOn": "2015-10-08T16:17:52.5615395Z",
+                    "modifiedBy": "admin"
+                },
+                "id": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
+                "name": "This is a test rule",
+                "description": "Test",
+                "status": "new",
+                "severity": "medium",
+                "dataOwner": "admin",
+                "class": "accuracy",
+                "impact": "department",
+                "category": "Test",
+                "object": "Test",
+                "property": "Name",
+                "queryCount": 1,
+                "tags": [
+                    "test"
+                ],
+                "runCount": 0,
+                "lastRun": null,
+                "exceptionCount": 0,
+                "lastException": null
+            }
+        }
+    ]
+}

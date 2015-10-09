@@ -29,7 +29,11 @@ namespace Naveego.Sync
 
         public string Type { get; set; }
 
+        public Guid? SyncStreamPointer { get; set; }
+
         public DateTime InstallDate { get; set; }
+
+        public string Repository { get; set; }
 
         public string AuthToken { get; set; }
 
