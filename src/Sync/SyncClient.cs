@@ -29,8 +29,6 @@ namespace Naveego.Sync
 
         public string Type { get; set; }
 
-        public Guid? SyncStreamPointer { get; set; }
-
         public DateTime InstallDate { get; set; }
 
         public string Repository { get; set; }
@@ -40,6 +38,8 @@ namespace Naveego.Sync
         public string ApiUrl { get; set; }
 
         public string LiveUrl { get; set; }
+
+        public string TimeZone { get; set; }
 
     }
 }

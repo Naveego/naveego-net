@@ -49,6 +49,26 @@ namespace Naveego.Sync
             return ExecuteRequest<SyncClient>(resourceUri);
         }
 
+        public SyncClient AddSyncClient(SyncClient syncClient)
+        {
+            var resourceUri = ToResourceUri("clients");
+            return ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
+            {
+                Method = "POST",
+                Data = syncClient
+            });
+        }
+
+        public SyncClient UpdateSyncClient(SyncClient syncClient)
+        {
+            var resourceUri = ToResourceUri(string.Format("clients/{0}", syncClient.Id));
+            return ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
+            {
+                Method = "PUT",
+                Data = syncClient
+            });
+        }
+
         public PagedStreamResult<SyncStreamEvent> ReadSyncStream(Guid? start)
         {
             var resourceUri = string.Format("{0}/streams/sync", ApiUrl);
