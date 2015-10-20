@@ -33,15 +33,15 @@ namespace Naveego.DataQuality
 
         public JObject Data { get; set; }
 
-        public Reference Query { get; set; }
+        public GuidReference Query { get; set; }
 
-        public Reference Run { get; set; }
+        public GuidReference Run { get; set; }
 
-        public Reference Source { get; set; }
+        public GuidReference Source { get; set; }
 
-        public Reference SyncClient { get; set; }
+        public GuidReference SyncClient { get; set; }
 
-        public Reference Rule { get; set; }
+        public GuidReference Rule { get; set; }
 
     }
 }

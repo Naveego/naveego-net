@@ -21,9 +21,22 @@ namespace Naveego
     public class PagedCollection<T>
     {
 
+        private IEnumerable<T> _data;
+
         public PagedCollectionMetadata Meta { get; set; }
 
-        public IEnumerable<T> Data { get; set; }
+        public IEnumerable<T> Data
+        {
+            get
+            {
+                if (_data == null)
+                {
+                    _data = new List<T>();
+                }
+                return _data;
+            }
+            set { _data = value; }
+        }
 
         public PagedCollection()
         {

@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="SyncStreamWithNull.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SyncStream.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

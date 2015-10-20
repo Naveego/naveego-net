@@ -21,7 +21,7 @@ namespace Naveego.Sync
         {
             var json = JObject.Load(reader);
             var syncEvent = new SyncStreamEvent();
-            syncEvent.Id = Guid.Parse((string)json["id"]);
+            syncEvent.Id = (long)json["id"];
             syncEvent.Timestamp = (DateTime)json["ts"];
             syncEvent.Action = (string)json["action"];
             syncEvent.ContentType = (string)json["contentType"];
@@ -30,7 +30,10 @@ namespace Naveego.Sync
             var typeName = string.Format("naveego.{0}", syncEvent.ContentType);
             var type = Type.GetType(typeName, true, true);
 
-            syncEvent.Content = ((JObject)json["content"]).ToObject(type, serializer);
+            if (json["content"] != null && json["content"].Type == JTokenType.Object)
+            { 
+                syncEvent.Content = ((JObject)json["content"]).ToObject(type, serializer);
+            }
 
             return syncEvent;
         }

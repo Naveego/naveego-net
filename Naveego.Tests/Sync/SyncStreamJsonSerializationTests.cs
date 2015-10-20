@@ -37,5 +37,26 @@ namespace Naveego.Sync
         }
 
 
+        [Test]
+        public void PagedStreamResultWithNullTest()
+        {
+            string json = File.ReadAllText("SyncStreamWithNull.json");
+            var serializer = JsonSerializerFactory.CreateSerializer();
+
+            using (var jr = new JsonTextReader(new StringReader(json)))
+            {
+                var result = serializer.Deserialize<PagedStreamResult<SyncStreamEvent>>(jr);
+
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result.Events.Count(), Is.EqualTo(4));
+                Assert.That(result.Events[0].Content, Is.InstanceOf<Rule>());
+                Assert.That(result.Events[1].Content, Is.InstanceOf<Query>());
+                Assert.That(result.Events[0].Content, Is.InstanceOf<Rule>());
+                Assert.That(result.Events[0].Content, Is.InstanceOf<Rule>());
+            }
+        }
+
+
+
     }
 }

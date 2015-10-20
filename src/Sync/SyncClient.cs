@@ -39,6 +39,8 @@ namespace Naveego.Sync
 
         public string LiveUrl { get; set; }
 
+        public string Version { get; set; }
+
         public string TimeZone { get; set; }
 
     }

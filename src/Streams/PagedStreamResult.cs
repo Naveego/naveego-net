@@ -11,9 +11,9 @@ namespace Naveego.Streams
 
         public int Count { get; set; }
 
-        public Guid FirstId { get; set; }
+        public long FirstId { get; set; }
 
-        public Guid LastId { get; set; }
+        public long LastId { get; set; }
 
         public bool HasMore { get; set; }
 

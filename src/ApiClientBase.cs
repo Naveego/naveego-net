@@ -119,6 +119,7 @@ namespace Naveego
                     {
                         byte[] sendBytes;
                         serializer.Serialize(jw, requestOptions.Data);
+                        jw.Flush();
                         sendBytes = ms.ToArray();
                         responseBytes = wc.UploadData(url, requestOptions.Method, sendBytes);
                     }

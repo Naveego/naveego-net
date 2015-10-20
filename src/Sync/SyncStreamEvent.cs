@@ -11,7 +11,7 @@ namespace Naveego.Sync
     public class SyncStreamEvent
     {
 
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public string ContentType { get; set; }
 

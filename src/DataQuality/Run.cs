@@ -66,16 +66,16 @@ namespace Naveego.DataQuality
 
         public string[] Tags { get; set; }
 
-        public string SupressedBy { get; set; }
+        public Guid? SupressedBy { get; set; }
 
         public RunTrend[] Trends { get; set; }
 
-        public Reference Query { get; set; }
+        public GuidReference Query { get; set; }
 
-        public Reference Rule { get; set; }
+        public GuidReference Rule { get; set; }
 
-        public Reference Source { get; set; }
+        public GuidReference Source { get; set; }
 
-        public Reference SyncClient { get; set; }
+        public GuidReference SyncClient { get; set; }
     }
 }

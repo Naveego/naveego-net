@@ -16,6 +16,6 @@ namespace Naveego.DataQuality
 
         public Decimal zScore { get; set; }
 
-        public string[] RunIds { get; set; }
+        public Guid[] RunIds { get; set; }
     }
 }

@@ -41,9 +41,9 @@ namespace Naveego.DataQuality
 
         public RunSchedule Schedule { get; set; }
 
-        public Reference Source { get; set; }
+        public GuidReference Source { get; set; }
 
-        public Reference Rule { get; set; }
+        public GuidReference Rule { get; set; }
 
         public JObject[] QueryProperties { get; set; }
 

@@ -48,7 +48,6 @@
     <Compile Include="ApiClientBase.cs" />
     <Compile Include="ApiRequestOptions.cs" />
     <Compile Include="DataQuality\Category.cs" />
-    <Compile Include="DataQuality\DataQualityApiClient.cs" />
     <Compile Include="DataQuality\Object.cs" />
     <Compile Include="DataQuality\Property.cs" />
     <Compile Include="DataQuality\Query.cs" />
@@ -61,6 +60,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="ApiClient.cs" />
     <Compile Include="GetCollectionOptions.cs" />
+    <Compile Include="GuidReference.cs" />
     <Compile Include="Json\JsonCreationConverter.cs" />
     <Compile Include="Json\JsonSerializerFactory.cs" />
     <Compile Include="Json\NaveegoJsonContractResolver.cs" />
@@ -71,7 +71,6 @@
     <Compile Include="ResourceMetadata.cs" />
     <Compile Include="Streams\PagedStreamResult.cs" />
     <Compile Include="Streams\StreamWindow.cs" />
-    <Compile Include="Sync\SyncApiClient.cs" />
     <Compile Include="Sync\SyncClient.cs" />
     <Compile Include="Sync\SyncStreamEvent.cs" />
     <Compile Include="Sync\SyncStreamEventJsonConverter.cs" />

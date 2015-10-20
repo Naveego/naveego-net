@@ -1,7 +1,7 @@
 ﻿{
-    "count": 3,
+    "count": 4,
     "firstId": 1445361890000000001,
-    "lastId":  1445361890000000004,
+    "lastId": 1445361890000000004,
     "events": [
         {
             "id": 1445361890000000001,
@@ -156,35 +156,9 @@
             "id": 1445361890000000004,
             "ts": "2015-10-08T21:17:52.634Z",
             "key": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
-            "action": "update",
+            "action": "delete",
             "contentType": "dataquality.rule",
-            "content": {
-                "_meta": {
-                    "createdOn": "2015-10-08T15:09:56.795Z",
-                    "createdBy": "admin",
-                    "modifiedOn": "2015-10-08T16:17:52.5615395Z",
-                    "modifiedBy": "admin"
-                },
-                "id": "8865acb0-1b65-4dc0-adb2-a52b00f9eca0",
-                "name": "This is a test rule",
-                "description": "Test",
-                "status": "new",
-                "severity": "medium",
-                "dataOwner": "admin",
-                "class": "accuracy",
-                "impact": "department",
-                "category": "Test",
-                "object": "Test",
-                "property": "Name",
-                "queryCount": 1,
-                "tags": [
-                    "test"
-                ],
-                "runCount": 0,
-                "lastRun": null,
-                "exceptionCount": 0,
-                "lastException": null
-            }
+            "content": null
         }
     ]
 }

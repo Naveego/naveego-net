@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Naveego.Streams
+namespace Naveego
 {
-    public class StreamWindow
+    public class GuidReference
     {
 
-        public long Start { get; set; }
+        public Guid Key { get; set; }
 
-        public long End { get; set; }
+        public string Name { get; set; }
 
     }
 }
