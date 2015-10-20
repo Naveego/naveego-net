@@ -119,13 +119,13 @@ namespace Naveego
             });
         }
 
-        public PagedStreamResult<SyncStreamEvent> ReadSyncStream(Guid? start)
+        public PagedStreamResult<SyncStreamEvent> ReadSyncStream(long? start)
         {
             var resourceUri = ToResourceUri("/streams/sync");
 
             if (start != null)
             {
-                resourceUri += "?start=" + start.ToString().ToLowerInvariant();
+                resourceUri += "?start=" + start.ToString();
             }
 
             return ExecuteRequest<PagedStreamResult<SyncStreamEvent>>(resourceUri);
