@@ -13,6 +13,7 @@
 * limitations under the License.
 */
 using System;
+using Newtonsoft.Json.Linq;
 
 namespace Naveego.DataQuality
 {
@@ -57,6 +58,8 @@ namespace Naveego.DataQuality
         public string StatusChangedBy { get; set; }
 
         public DateTime? StatusChangedDate { get; set; }
+
+        public JObject[] DetailColumns { get; set; }
 
         public string QueryText { get; set; }
 
