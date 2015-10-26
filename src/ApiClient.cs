@@ -133,7 +133,7 @@ namespace Naveego
 
         public StreamWindow GetSyncStreamWindow()
         {
-            var resourceUri = ToResourceUri("{0}/streamwindows/sync");
+            var resourceUri = ToResourceUri("/streamwindows/sync");
             return ExecuteRequest<StreamWindow>(resourceUri);
         }
     }
