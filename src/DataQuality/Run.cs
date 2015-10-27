@@ -53,11 +53,19 @@ namespace Naveego.DataQuality
 
         public int ExceptionCount { get; set; }
 
+        public int CommentCount { get; set; }
+
         public long QueryTime { get; set; }
 
         public string StatusChangedBy { get; set; }
 
         public DateTime? StatusChangedDate { get; set; }
+
+        public string KeyColumn { get; set; }
+
+        public string LabelColumn { get; set; }
+
+        public string DescriptionColumn { get; set; }
 
         public JObject[] DetailColumns { get; set; }
 
