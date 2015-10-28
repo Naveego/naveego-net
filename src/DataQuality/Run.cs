@@ -77,7 +77,7 @@ namespace Naveego.DataQuality
 
         public string[] Tags { get; set; }
 
-        public Guid? SupressedBy { get; set; }
+        public Guid? SuppressedBy { get; set; }
 
         public RunTrend[] Trends { get; set; }
 
