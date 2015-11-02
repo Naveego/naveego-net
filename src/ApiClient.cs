@@ -18,13 +18,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Naveego.DataQuality;
+using Naveego.Security;
 using Naveego.Streams;
 using Naveego.Sync;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Naveego
 {
     public class ApiClient : ApiClientBase
     {
+
+
+        public User Login(string companyId, string username, string password)
+        {
+            var apiUrl = string.Format("https://{0}.naveegoapi.com/v3", companyId.ToLowerInvariant());
+            var url = string.Format("{0}/user/validate", apiUrl, companyId.ToLowerInvariant());
+
+            var loginRequest = new JObject(
+                new JProperty("username", username),
+                new JProperty("password", password));
+
+            var response = ExecuteRequest<JObject>(url, new ApiRequestOptions
+            {
+                Method = "POST",
+                Data = loginRequest
+            });
+
+            if ((bool)response["success"] == false)
+            {
+                throw new UnauthorizedAccessException("Invalid username or password");
+            }
+
+            var user = ((JObject)response["user"]).ToObject<User>();
+            this.ApiUrl = apiUrl;
+            this.AuthToken = user.ServiceTicket;
+
+            return user;
+        }
+
 
         public PagedCollection<Connection> GetConnections(GetCollectionOptions options = null)
         {

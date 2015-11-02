@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naveego", "Naveego.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naveego.Tests", "..\Naveego.Tests\Naveego.Tests.csproj", "{B648B843-9A2C-423F-9F92-BB095DA3CE50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naveego.TestConsole", "..\Naveego.TestConsole\Naveego.TestConsole.csproj", "{59ECE81F-2F70-4B16-95F1-2977778864C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B648B843-9A2C-423F-9F92-BB095DA3CE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B648B843-9A2C-423F-9F92-BB095DA3CE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B648B843-9A2C-423F-9F92-BB095DA3CE50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ECE81F-2F70-4B16-95F1-2977778864C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ECE81F-2F70-4B16-95F1-2977778864C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ECE81F-2F70-4B16-95F1-2977778864C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ECE81F-2F70-4B16-95F1-2977778864C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
