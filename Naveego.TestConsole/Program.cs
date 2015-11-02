@@ -13,7 +13,8 @@ namespace Naveego.TestConsole
 
             var apiClient = new ApiClient();
 
-            
+            apiClient.ApiUrl = "https://sbti.naveegoapi.com/v3";
+            apiClient.Login("admin", "sbti123");
             var connections = apiClient.GetConnections();
 
             Console.ReadLine();

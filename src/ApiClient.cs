@@ -31,10 +31,9 @@ namespace Naveego
     {
 
 
-        public User Login(string companyId, string username, string password)
+        public User Login(string username, string password)
         {
-            var apiUrl = string.Format("https://{0}.naveegoapi.com/v3", companyId.ToLowerInvariant());
-            var url = string.Format("{0}/user/validate", apiUrl, companyId.ToLowerInvariant());
+            var url = ToResourceUri("/user/validate");
 
             var loginRequest = new JObject(
                 new JProperty("username", username),
@@ -52,7 +51,6 @@ namespace Naveego
             }
 
             var user = ((JObject)response["user"]).ToObject<User>();
-            this.ApiUrl = apiUrl;
             this.AuthToken = user.ServiceTicket;
 
             return user;
