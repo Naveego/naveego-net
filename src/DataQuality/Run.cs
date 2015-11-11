@@ -87,8 +87,6 @@ namespace Naveego.DataQuality
 
         public GuidReference Source { get; set; }
 
-        public GuidReference Connection { get; set; }
-
         public GuidReference SyncClient { get; set; }
     }
 }
