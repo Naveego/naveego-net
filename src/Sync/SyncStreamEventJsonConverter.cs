@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Naveego.DataQuality;
 using Naveego.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -27,8 +28,23 @@ namespace Naveego.Sync
             syncEvent.ContentType = (string)json["contentType"];
             syncEvent.Key = Guid.Parse((string)json["key"]);
 
-            var typeName = string.Format("naveego.{0}", syncEvent.ContentType);
-            var type = Type.GetType(typeName, true, true);
+
+            Type type = null;
+            switch (syncEvent.ContentType)
+            {
+                case "sync.client":
+                    type = typeof(SyncClient);
+                    break;
+                case "connection":
+                    type = typeof(Connection);
+                    break;
+                case "dataquality.rule":
+                    type = typeof(Rule);
+                    break;
+                case "dataquality.query":
+                    type = typeof(Query);
+                    break;
+            }
 
             if (json["content"] != null && json["content"].Type == JTokenType.Object)
             { 
