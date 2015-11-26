@@ -33,7 +33,7 @@ namespace Naveego
 
         public DateTime? StatusDate { get; set; }
         
-        public Reference SyncClient { get; set; }
+        public GuidReference SyncClient { get; set; }
 
         public JObject Settings { get; set; }
 
