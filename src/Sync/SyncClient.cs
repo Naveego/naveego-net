@@ -21,6 +21,8 @@ namespace Naveego.Sync
 
         public Guid Id { get; set; }
 
+        public ResourceMetadata Metadata { get; set; }
+
         public string Name { get; set; }
 
         public string Status { get; set; }
