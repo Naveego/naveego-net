@@ -25,11 +25,15 @@ namespace Naveego.Sync
 
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
         public string Status { get; set; }
 
         public string Host { get; set; }
 
         public string Type { get; set; }
+
+        public string RunningAs { get; set; }
 
         public DateTime InstallDate { get; set; }
 
