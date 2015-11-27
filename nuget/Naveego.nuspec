@@ -2,15 +2,17 @@
 <package>
   <metadata>
     <id>Naveego</id>
-    <version>3.3.35-beta</version>
+    <version>3.3.38-beta</version>
     <title>Naveego</title>
     <authors>Derek Smith</authors>
     <owners>Derek Smith</owners>
     <licenseUrl>http://www.naveego.com/terms</licenseUrl>
+    <iconUrl>http://naveegomedia.blob.core.windows.net/downloads/NaveegoLogo.png</iconUrl>
+    <projectUrl>http://www.naveego.com</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Naveego REST API Library</description>
     <copyright>Copyright 2015</copyright>
-    <tags>Naveego</tags>
+    <tags>naveego</tags>
     <dependencies>
        <dependency id="Newtonsoft.Json" version="6.0.8" />
     </dependencies>

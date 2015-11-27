@@ -115,9 +115,9 @@ namespace Naveego
             });
         }
 
-        public SyncClient GetSyncClient(Guid id)
+        public SyncClient GetSyncClient(string idOrName)
         {
-            var resourceUri = ToResourceUri(string.Format("sync/clients/{0}", id));
+            var resourceUri = ToResourceUri(string.Format("sync/clients/{0}", idOrName));
             return ExecuteRequest<SyncClient>(resourceUri);
         }
 
