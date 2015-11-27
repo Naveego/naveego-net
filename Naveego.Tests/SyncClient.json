@@ -1,0 +1,20 @@
+﻿{
+    "_meta": {
+        "createdOn" : "2015-11-27T15:48:32.392Z", 
+        "createdBy" : "admin", 
+        "modifiedOn" : "2015-11-27T15:48:32.392Z", 
+        "modifiedBy" : "admin"
+    },
+    "id": "b647a85e-466a-4584-9770-a55d0108b7d0",
+    "name": "Test",
+    "status": null,
+    "host": "DEREK-SURFACE",
+    "type": "user",
+    "installDate": "2015-11-27T16:03:46.9436024Z",
+    "repository": "adventureworks",
+    "authToken": "JPqS+89Rak+c6kH39HSKsGpoiX7IHfyaNHVKZ3Gs",
+    "apiUrl": "http://localhost:8182/v3",
+    "liveUrl": "http://localhost:56455",
+    "version": "3.3.0-beta",
+    "timeZone": "America/New_York"
+}

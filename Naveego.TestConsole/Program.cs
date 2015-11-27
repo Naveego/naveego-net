@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Naveego.Sync;
 
 namespace Naveego.TestConsole
 {
@@ -12,7 +13,6 @@ namespace Naveego.TestConsole
         {
 
             var apiClient = new ApiClient();
-            var connections = apiClient.GetConnections();
 
             Console.ReadLine();
 

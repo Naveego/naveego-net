@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using Naveego.Json;
 using Newtonsoft.Json;
 
 namespace Naveego
@@ -69,7 +70,7 @@ namespace Naveego
             {
                 // Might need to change this if the  users 
                 // computer is actually using a proxy
-                wc.Proxy = null;
+                //wc.Proxy = null;
 
                 // Setup some of the headers
                 wc.Headers["Content-Type"] = "application/json";
@@ -147,7 +148,7 @@ namespace Naveego
         {
             if(_serializer == null)
             {
-                _serializer = new JsonSerializer();
+                _serializer = JsonSerializerFactory.CreateSerializer();
             }
 
             return _serializer;
