@@ -53,7 +53,7 @@
     <Compile Include="Sync\SyncStreamJsonSerializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Naveego.csproj">
+    <ProjectReference Include="..\Naveego\Naveego.csproj">
       <Project>{44e37823-3681-4029-9905-2df2b16fc574}</Project>
       <Name>Naveego</Name>
     </ProjectReference>
