@@ -70,7 +70,7 @@ namespace Naveego
             {
                 // Might need to change this if the  users 
                 // computer is actually using a proxy
-                //wc.Proxy = null;
+                wc.Proxy = null;
 
                 // Setup some of the headers
                 wc.Headers["Content-Type"] = "application/json";
