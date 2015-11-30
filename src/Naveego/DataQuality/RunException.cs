@@ -25,6 +25,8 @@ namespace Naveego.DataQuality
         [JsonProperty("ts")]
         public DateTime Timestamp { get; set; }
 
+        public DateTime RunStartedAt { get; set; }
+
         public string Key { get; set; }
 
         public string Label { get; set; }
