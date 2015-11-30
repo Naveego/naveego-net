@@ -158,6 +158,10 @@ namespace Naveego
             {
                 resourceUri += "?start=" + start.ToString();
             }
+            else
+            {
+                resourceUri += "?start=0";
+            }
 
             return ExecuteRequest<PagedStreamResult<SyncStreamEvent>>(resourceUri);
         }
