@@ -49,6 +49,8 @@ namespace Naveego.DataQuality
 
         public DateTime? FinishedAt { get; set; }
 
+        public DateTime ExpiresAt { get; set; }
+
         public int Population { get; set; }
 
         public int ExceptionCount { get; set; }
