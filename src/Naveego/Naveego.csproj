@@ -82,6 +82,7 @@
     <Compile Include="Streams\PagedStreamResult.cs" />
     <Compile Include="Streams\StreamWindow.cs" />
     <Compile Include="Sync\SyncClient.cs" />
+    <Compile Include="Sync\SyncClientDeploymentSettings.cs" />
     <Compile Include="Sync\SyncStreamEvent.cs" />
     <Compile Include="Sync\SyncStreamEventJsonConverter.cs" />
   </ItemGroup>

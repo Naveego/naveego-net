@@ -171,5 +171,11 @@ namespace Naveego
             var resourceUri = ToResourceUri("/streamwindows/sync");
             return ExecuteRequest<StreamWindow>(resourceUri);
         }
+
+        public SyncClientDeploymentSettings GetDeploymentSettings(string token)
+        {
+            var resourceUri = ToResourceUri(string.Format("/sync/deploy/{0}", token));
+            return ExecuteRequest<SyncClientDeploymentSettings>(resourceUri, new ApiRequestOptions { IsAnonymous = true });
+        }
     }
 }
