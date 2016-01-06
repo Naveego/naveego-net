@@ -18,6 +18,8 @@ namespace Naveego.Sync
 
         public Guid SyncClientId { get; set; }
 
+        public string DeployAuthToken { get; set; }
+
         public string SyncAuthToken { get; set; }
 
     }
