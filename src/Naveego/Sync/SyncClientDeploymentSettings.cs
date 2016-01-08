@@ -12,6 +12,8 @@ namespace Naveego.Sync
 
         public string Id { get; set; }
 
+        public string Repository { get; set; }
+
         public string ApiUrl { get; set; }
 
         public string LiveUrl { get; set; }
