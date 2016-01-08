@@ -174,7 +174,11 @@ namespace Naveego
 
         public SyncClientDeploymentSettings GetDeploymentSettings(string token)
         {
-            var resourceUri = ToResourceUri(string.Format("/sync/deploy/{0}", token));
+            var uri = new Uri(this.ApiUrl);
+            var host = uri.Host;
+            var scheme = uri.Scheme;
+
+            var resourceUri = string.Format("{0}://{1}/deployment/{2}", scheme, host, token);
             return ExecuteRequest<SyncClientDeploymentSettings>(resourceUri, new ApiRequestOptions { IsAnonymous = true });
         }
     }
