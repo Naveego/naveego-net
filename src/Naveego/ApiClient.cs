@@ -177,8 +177,18 @@ namespace Naveego
             var uri = new Uri(this.ApiUrl);
             var host = uri.Host;
             var scheme = uri.Scheme;
+            var port = uri.Port;
+            var resourceUri = string.Empty;
 
-            var resourceUri = string.Format("{0}://{1}/deployment/{2}", scheme, host, token);
+            if (uri.IsDefaultPort == false)
+            {
+                resourceUri = string.Format("{0}://{1}:{2}/deployment/{3}", scheme, host, port, token);
+            }
+            else
+            {
+                resourceUri = string.Format("{0}://{1}/deployment/{2}", scheme, host, token);
+            }
+
             return ExecuteRequest<SyncClientDeploymentSettings>(resourceUri, new ApiRequestOptions { IsAnonymous = true });
         }
     }

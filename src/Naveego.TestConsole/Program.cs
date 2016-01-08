@@ -14,7 +14,7 @@ namespace Naveego.TestConsole
 
             var apiClient = new ApiClient();
 
-            apiClient.ApiUrl = "http://deploy.naveegoapi.com/v3";
+            apiClient.ApiUrl = "http://localhost:8183/v3";
             apiClient.GetDeploymentSettings("234");
 
             Console.ReadLine();
