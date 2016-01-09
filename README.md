@@ -1,2 +1,2 @@
 # naveego-net
-Naveego API client for Microsoft .NET
+Naveego REST API client for Microsoft .NET
