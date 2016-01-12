@@ -79,6 +79,7 @@
     <Compile Include="Reference.cs" />
     <Compile Include="ResourceMetadata.cs" />
     <Compile Include="Security\User.cs" />
+    <Compile Include="AuthToken.cs" />
     <Compile Include="Streams\PagedStreamResult.cs" />
     <Compile Include="Streams\StreamWindow.cs" />
     <Compile Include="Sync\SyncClient.cs" />

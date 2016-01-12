@@ -30,31 +30,7 @@ namespace Naveego
     public class ApiClient : ApiClientBase
     {
 
-
-        public User Login(string username, string password)
-        {
-            var url = ToResourceUri("/user/validate");
-
-            var loginRequest = new JObject(
-                new JProperty("username", username),
-                new JProperty("password", password));
-
-            var response = ExecuteRequest<JObject>(url, new ApiRequestOptions
-            {
-                Method = "POST",
-                Data = loginRequest
-            });
-
-            if ((bool)response["success"] == false)
-            {
-                throw new UnauthorizedAccessException("Invalid username or password");
-            }
-
-            var user = ((JObject)response["user"]).ToObject<User>();
-            this.AuthToken = user.ServiceTicket;
-
-            return user;
-        }
+       
 
 
         public PagedCollection<Connection> GetConnections(GetCollectionOptions options = null)

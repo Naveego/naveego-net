@@ -18,6 +18,7 @@ using System.IO;
 using System.Net;
 using Naveego.Json;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Naveego
 {
@@ -28,7 +29,7 @@ namespace Naveego
 
         public string ApiUrl { get; set; }
 
-        public string AuthToken { get; set; }
+        public AuthToken AuthToken { get; set; }
 
         protected virtual string BasePath
         {
@@ -47,7 +48,49 @@ namespace Naveego
 
         protected void AuthenticateRequest(WebClient wc)
         {
-            wc.Headers["X-Naveego-Auth-Token"] = AuthToken;
+            wc.Headers["Authorization"] = string.Format("Bearer {0}", this.AuthToken);
+        }
+
+        public bool Authenticate(string repository, string username, string password)
+        {
+            var url = string.Format("{0}/authenticate", ApiUrl);
+
+            var loginRequest = new JObject(
+                new JProperty("repository", repository),
+                new JProperty("username", username),
+                new JProperty("password", password));
+
+            var response = ExecuteRequest<JObject>(url, new ApiRequestOptions
+            {
+                Method = "POST",
+                Data = loginRequest,
+                IsAnonymous = true
+            });
+
+            if ((bool)response["success"] == false)
+            {
+                return false;
+            }
+
+            var tokenStr = (string)response["token"];
+            this.AuthToken = AuthToken.Parse(tokenStr);
+            return true;
+        }
+
+        public bool RefreshToken()
+        {
+            try
+            {
+                var url = string.Format("{0}/token/refresh", ApiUrl);
+                var response = ExecuteRequest<JObject>(url);
+                var tokenStr = (string)response["token"];
+                this.AuthToken = AuthToken.Parse(tokenStr);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public TResponse ExecuteRequest<TRequest, TResponse>(string uri, TRequest request, ApiRequestOptions options = null)
