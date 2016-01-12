@@ -19,6 +19,7 @@ using System.Net;
 using Naveego.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Naveego.Security;
 
 namespace Naveego
 {
@@ -31,10 +32,7 @@ namespace Naveego
 
         public AuthToken AuthToken { get; set; }
 
-        protected virtual string BasePath
-        {
-            get { return ""; }
-        }
+        public string BasePath { get; set; }
 
         protected string ToResourceUri(string uri)
         {
@@ -48,7 +46,7 @@ namespace Naveego
 
         protected void AuthenticateRequest(WebClient wc)
         {
-            wc.Headers["Authorization"] = string.Format("Bearer {0}", this.AuthToken);
+            wc.Headers["Authorization"] = string.Format("Bearer {0}", this.AuthToken.JWT);
         }
 
         public bool Authenticate(string repository, string username, string password)
@@ -91,6 +89,12 @@ namespace Naveego
             {
                 return false;
             }
+        }
+
+        public User WhoAmI()
+        {
+            var url = ToResourceUri("whoami");
+            return ExecuteRequest<User>(url);
         }
 
         public TResponse ExecuteRequest<TRequest, TResponse>(string uri, TRequest request, ApiRequestOptions options = null)
