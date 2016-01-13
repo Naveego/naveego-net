@@ -20,6 +20,7 @@ using Naveego.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Naveego.Security;
+using System.Web;
 
 namespace Naveego
 {
@@ -89,6 +90,17 @@ namespace Naveego
             {
                 return false;
             }
+        }
+
+        public AuthToken RefreshToken(AuthToken token)
+        {
+            var url = string.Format("{0}/token/refresh?_t={1}", ApiUrl, HttpUtility.UrlEncode(token.JWT));
+            var response = ExecuteRequest<JObject>(url, new ApiRequestOptions
+            {
+                IsAnonymous = true 
+            });
+            var tokenStr = (string)response["token"];
+            return AuthToken.Parse(tokenStr);
         }
 
         public User WhoAmI()
