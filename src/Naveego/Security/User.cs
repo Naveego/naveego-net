@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+using Naveego.Live;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,6 +63,8 @@ namespace Naveego.Security
         public Guid UserId { get; set; }
 
         public string DisplayName { get; set; }
+
+        public LiveStatus Live { get; set; }
 
         public string[] Roles
         {

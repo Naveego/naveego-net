@@ -14,6 +14,7 @@
 */
 using System;
 using Newtonsoft.Json.Linq;
+using Naveego.Live;
 
 namespace Naveego
 {
@@ -46,5 +47,7 @@ namespace Naveego
         public DateTime ModifiedOn { get; set; }
 
         public string ModifiedBy { get; set; }
+
+        public LiveStatus Live { get; set; }
     }
 }

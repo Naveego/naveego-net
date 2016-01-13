@@ -12,6 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+using Naveego.Live;
 using System;
 
 namespace Naveego.Sync
@@ -45,5 +46,6 @@ namespace Naveego.Sync
 
         public string TimeZone { get; set; }
 
+        public LiveStatus Live { get; set; }
     }
 }

@@ -73,6 +73,8 @@
     <Compile Include="Json\JsonCreationConverter.cs" />
     <Compile Include="Json\JsonSerializerFactory.cs" />
     <Compile Include="Json\NaveegoJsonContractResolver.cs" />
+    <Compile Include="Live\LiveStats.cs" />
+    <Compile Include="Live\LiveStatus.cs" />
     <Compile Include="PagedCollection.cs" />
     <Compile Include="PagedCollectionMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
