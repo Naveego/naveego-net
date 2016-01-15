@@ -13,8 +13,6 @@ namespace Naveego.Live
 
         public DateTime StatusDate { get; set; }
 
-        public LiveStats Stats { get; set; }
-
         public string[] ConnectionIds { get; set; }
 
     }
