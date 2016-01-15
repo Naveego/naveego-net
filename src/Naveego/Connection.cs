@@ -30,8 +30,6 @@ namespace Naveego
 
         public string Status { get; set; }
 
-        public string AuthToken { get; set; }
-
         public BusinessApplicationRef Application { get; set; }
 
         public DateTime? StatusDate { get; set; }

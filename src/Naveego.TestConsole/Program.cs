@@ -14,8 +14,6 @@ namespace Naveego.TestConsole
 
             var apiClient = new ApiClient();
 
-            var user = apiClient.WhoAmI();
-
             Console.ReadLine();
 
         }

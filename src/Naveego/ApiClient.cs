@@ -117,6 +117,14 @@ namespace Naveego
             });
         }
 
+        public AuthToken GetConnectionAuthToken(Guid connectionId)
+        {
+            var resourceUri = ToResourceUri(string.Format("connection/{0}/authtoken", connectionId));
+            var response = ExecuteRequest<JObject>(resourceUri);
+            var tokenStr = (string)response["token"]["jwt"];
+            return AuthToken.Parse(tokenStr);
+        }
+
         public void DeleteSyncClient(SyncClient syncClient)
         {
             var resourceUri = ToResourceUri(string.Format("sync/clients/{0}", syncClient.Id));
