@@ -27,6 +27,8 @@ namespace Naveego.DataQuality
 
         public string State { get; set; }
 
+        public string TransferState { get; set; }
+
         public string Indicator { get; set; }
 
         public string Severity { get; set; }
@@ -50,6 +52,8 @@ namespace Naveego.DataQuality
         public DateTime? FinishedAt { get; set; }
 
         public DateTime ExpiresAt { get; set; }
+
+        public DateTime? TransferCompletedAt { get; set; }
 
         public int Population { get; set; }
 
