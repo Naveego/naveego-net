@@ -39,6 +39,8 @@ namespace Naveego.DataQuality
 
         public string CountColumn { get; set; }
 
+        public string DataOwner { get; set; }
+
         public RunSchedule Schedule { get; set; }
 
         public GuidReference Source { get; set; }
