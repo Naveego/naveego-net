@@ -35,6 +35,10 @@ namespace Naveego
 
         public string BasePath { get; set; }
 
+        public string ProxyUrl { get; set; }
+
+        public int ProxyPort { get; set; }
+
         protected string ToResourceUri(string uri)
         {
             if(String.IsNullOrEmpty(BasePath) == false)
@@ -127,9 +131,14 @@ namespace Naveego
 
             using (var wc = new WebClient())
             {
-                // Might need to change this if the  users 
-                // computer is actually using a proxy
-                wc.Proxy = null;
+                if (string.IsNullOrWhiteSpace(ProxyUrl) == false)
+                {
+                    wc.Proxy = new WebProxy(ProxyUrl, ProxyPort);
+                }
+                else
+                {
+                    wc.Proxy = null;
+                }
 
                 // Setup some of the headers
                 wc.Headers["Content-Type"] = "application/json";
