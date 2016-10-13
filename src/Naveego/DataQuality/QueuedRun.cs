@@ -16,12 +16,6 @@ namespace Naveego.DataQuality
         [JsonProperty("rule_id")]
         public Guid RuleId { get; set; }
 
-        [JsonProperty("connection_id")]
-        public Guid ConnectionId { get; set; }
-
-        [JsonProperty("client_id")]
-        public Guid SyncClientId { get; set; }
-
         [JsonProperty("queued_on")]
         public DateTime QueuedOn { get; set; }
 
