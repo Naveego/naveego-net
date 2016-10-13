@@ -60,6 +60,7 @@
     <Compile Include="DataQuality\Object.cs" />
     <Compile Include="DataQuality\Property.cs" />
     <Compile Include="DataQuality\Query.cs" />
+    <Compile Include="DataQuality\QueuedRun.cs" />
     <Compile Include="DataQuality\Rule.cs" />
     <Compile Include="DataQuality\Run.cs" />
     <Compile Include="DataQuality\RunException.cs" />
