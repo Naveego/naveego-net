@@ -88,6 +88,10 @@
     <Compile Include="Sync\SyncClientDeploymentSettings.cs" />
     <Compile Include="Sync\SyncStreamEvent.cs" />
     <Compile Include="Sync\SyncStreamEventJsonConverter.cs" />
+    <Compile Include="Sync\WriteBack.cs" />
+    <Compile Include="Sync\WritebackData.cs" />
+    <Compile Include="Sync\WriteBackRule.cs" />
+    <Compile Include="Sync\WriteBackStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

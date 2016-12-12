@@ -44,6 +44,9 @@ namespace Naveego.Sync
                 case "dataquality.query":
                     type = typeof(Query);
                     break;
+                case "dataquality.queuedrun":
+                    type = typeof(QueuedRun);
+                    break;
             }
 
             if (json["content"] != null && json["content"].Type == JTokenType.Object)

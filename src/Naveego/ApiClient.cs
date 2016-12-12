@@ -59,6 +59,31 @@ namespace Naveego
             });
         }
 
+        public IList<WriteBack> GetWriteBacks()
+        {
+            var resourceUri = ToResourceUri("sync/writebacks");
+            var result = ExecuteRequest<PagedCollection<WriteBack>>(resourceUri, new ApiRequestOptions {
+                GetCollectionOptions = new GetCollectionOptions {  PageSize = 100000 }
+            });
+            return result.Data.ToList();
+        }
+
+        public IList<WriteBackData> DequeueWritebacks(WriteBack writeBack)
+        {
+            var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBack.Id));
+            return ExecuteRequest<List<WriteBackData>>(resourceUri, new ApiRequestOptions { });
+        }
+
+        public void MarkDelievered(WriteBackData writeBackData)
+        {
+            var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBackData.WritebackId));
+            ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
+            {
+                Method = "PUT",
+                Data = new JObject(new JProperty("id", writeBackData.Id))
+            });
+        }
+
         public Rule GetRule(Guid id)
         {
             var resourceUri = ToResourceUri(string.Format("dataquality/rules/{0}", id));
