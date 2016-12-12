@@ -71,7 +71,8 @@ namespace Naveego
         public IList<WriteBackData> DequeueWritebacks(WriteBack writeBack)
         {
             var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBack.Id));
-            return ExecuteRequest<List<WriteBackData>>(resourceUri, new ApiRequestOptions { });
+            var result = ExecuteRequest<NonPagedList<WriteBackData>>(resourceUri, new ApiRequestOptions { });
+            return result.Data;
         }
 
         public void MarkDelievered(WriteBackData writeBackData)
@@ -79,7 +80,7 @@ namespace Naveego
             var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBackData.WritebackId));
             ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
             {
-                Method = "PUT",
+                Method = "POST",
                 Data = new JObject(new JProperty("id", writeBackData.Id))
             });
         }
