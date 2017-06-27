@@ -45,5 +45,7 @@ namespace Naveego.DataQuality
 
         public GuidReference Rule { get; set; }
 
+        public int Sequence { get; set; }
+
     }
 }
