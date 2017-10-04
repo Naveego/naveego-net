@@ -14,6 +14,7 @@
 */
 using Naveego.Live;
 using System;
+using Newtonsoft.Json;
 
 namespace Naveego.Sync
 {
@@ -41,6 +42,9 @@ namespace Naveego.Sync
         public string ApiUrl { get; set; }
 
         public string LiveUrl { get; set; }
+
+        [JsonProperty("dflogUrl")]
+        public string DFLogUrl { get; set; }
 
         public string Version { get; set; }
 
