@@ -68,6 +68,13 @@ namespace Naveego
             return result.Data.ToList();
         }
 
+        public IList<Dimension> GetDimensions()
+        {
+            var resourceUri = ToResourceUri("dataquality/dimensions");
+            var result = ExecuteRequest<NonPagedList<Dimension>>(resourceUri);
+            return result.Data;
+        }
+
         public IList<WriteBackData> DequeueWritebacks(WriteBack writeBack)
         {
             var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBack.Id));
