@@ -50,6 +50,9 @@ namespace Naveego.Sync
                 case "sync.writeback":
                     type = typeof(WriteBack);
                     break;
+                case "dataquality.dimension":
+                    type = typeof(Dimension);
+                    break;
             }
 
             if (json["content"] != null && json["content"].Type == JTokenType.Object)

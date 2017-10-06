@@ -57,6 +57,9 @@
     <Compile Include="BusinessApplication.cs" />
     <Compile Include="BusinessApplicationRef.cs" />
     <Compile Include="DataQuality\Category.cs" />
+    <Compile Include="DataQuality\Dimension.cs" />
+    <Compile Include="DataQuality\DimensionItem.cs" />
+    <Compile Include="DataQuality\DimensionSourceValue.cs" />
     <Compile Include="DataQuality\Object.cs" />
     <Compile Include="DataQuality\Property.cs" />
     <Compile Include="DataQuality\Query.cs" />
@@ -69,6 +72,7 @@
     <Compile Include="DataQuality\Tag.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="ApiClient.cs" />
+    <Compile Include="DataQuality\VirtualCheckOverride.cs" />
     <Compile Include="GetCollectionOptions.cs" />
     <Compile Include="GuidReference.cs" />
     <Compile Include="Json\JsonCreationConverter.cs" />
