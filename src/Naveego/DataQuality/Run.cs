@@ -45,6 +45,10 @@ namespace Naveego.DataQuality
 
         public string AssignedTo { get; set; }
 
+        public string Dimension { get; set; }
+
+        public string DimensionItem { get; set; }
+
         public DateTime ScheduleStart { get; set; }
 
         public DateTime StartedAt { get; set; }
