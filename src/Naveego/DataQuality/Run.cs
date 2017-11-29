@@ -23,6 +23,8 @@ namespace Naveego.DataQuality
 
         public Guid Id { get; set; }
 
+        public string CheckId { get; set; }
+
         public string Status { get; set; }
 
         public string State { get; set; }

@@ -20,9 +20,14 @@ namespace Naveego.DataQuality
 {
     public class Query
     {
+       
+        private string[] _tags;
+
         public ResourceMetadata Metadata { get; set; }
 
         public Guid Id { get; set; }
+
+        public bool Enabled { get; set; }
 
         public string Type { get; set; }
 
@@ -42,6 +47,16 @@ namespace Naveego.DataQuality
         public string CountColumn { get; set; }
 
         public string DataOwner { get; set; }
+
+        public string Severity { get; set; }
+
+        public string Class { get; set; }
+
+        public string Impact { get; set; }
+
+        public string Object { get; set; }
+
+        public string Property { get; set; }
 
         public RunSchedule Schedule { get; set; }
 
@@ -66,6 +81,19 @@ namespace Naveego.DataQuality
         public string TemplateList { get; set; }
 
         public VirtualCheckOverride[] VirtualOverrides { get; set; }
+
+        public string[] Tags
+        {
+            get
+            {
+                if (_tags == null)
+                {
+                    _tags = new string[0];
+                }
+                return _tags;
+            }
+            set { _tags = value; }
+        }
 
     }
 }
