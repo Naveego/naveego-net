@@ -22,6 +22,11 @@ namespace Naveego.DataQuality
         [JsonProperty("queued_by")]
         public string QueuedBy { get; set; }
 
+        [JsonProperty("dimension")]
+        public Dimension Dimension { get; set; }
+
+        [JsonProperty("dimension_item")]
+        public DimensionItem DimensionItem { get; set; }
 
     }
 }

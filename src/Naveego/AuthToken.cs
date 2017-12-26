@@ -125,9 +125,9 @@ namespace Naveego
             var jwtParts = jwt.Split(new[] { '.' });
             if (jwtParts.Length != 3) throw new ArgumentException("Invalid JWT");
 
-            var headerBytes = Convert.FromBase64String(jwtParts[0]);
-            var payloadBytes = Convert.FromBase64String(jwtParts[1]);
-            var signature = Convert.FromBase64String(jwtParts[2]);
+            var headerBytes = Convert.FromBase64String(URLDecode(jwtParts[0]));
+            var payloadBytes = Convert.FromBase64String(URLDecode(jwtParts[1]));
+            var signature = Convert.FromBase64String(URLDecode(jwtParts[2]));
             JObject header;
             JObject payload;
 
@@ -164,6 +164,12 @@ namespace Naveego
             if (payload["zoneinfo"] != null) sat.ZoneInfo = (string)payload["zoneinfo"];
 
             return sat;
+        }
+
+        private static string URLDecode(string str)
+        {
+            return str.Replace('-', '+')
+                .Replace('_', '/');
         }
     }
 }
