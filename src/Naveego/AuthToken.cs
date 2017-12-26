@@ -67,13 +67,26 @@ namespace Naveego
 
         public string Audience { get; internal set; }
 
-        public int ExpireAt { get; internal set; }
+        public string ExpireAt { get; internal set; }
 
-        public int NotBefore { get; internal set; }
+        public string NotBefore { get; internal set; }
 
-        public int IssuedAt { get; internal set; }
+        public string IssuedAt { get; internal set; }
 
-        public string[] Roles { get; internal set; }
+        public string Role { get; set; }
+
+        public string[] Roles
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(Role))
+                {
+                    return new string[0];
+                }
+
+                return Role.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            }
+        }
 
         public string Name { get; internal set; }
 
@@ -85,39 +98,13 @@ namespace Naveego
 
         public string Email { get; internal set; }
 
-        public bool EmailVerified { get; internal set; }
+        public string EmailVerified { get; internal set; }
 
         public string ZoneInfo { get; internal set; }
 
-        [JsonIgnore]
-        public string PrincipalId
-        {
-            get
-            {
-                var indexOfSlash = this.Subject.IndexOf('/');
-                if (indexOfSlash >= 0)
-                {
-                    return this.Subject.Substring(indexOfSlash + 1);
-                }
-
-                return null;
-            }
-        }
 
         [JsonIgnore]
-        public string PrincipalType
-        {
-            get
-            {
-                var indexOfSlash = this.Subject.IndexOf('/');
-                if (indexOfSlash >= 0)
-                {
-                    return this.Subject.Substring(0, indexOfSlash);
-                }
-
-                return null;
-            }
-        }
+        public string PrincipalType { get; set; }
 
         public static AuthToken Parse(string jwt)
         {
@@ -148,19 +135,21 @@ namespace Naveego
             var sat = new AuthToken(jwt, type, alg, jwtParts[0], jwtParts[1], signature);
 
             sat.Issuer = (string)payload["iss"];
-            sat.IssuedAt = (int)payload["iat"];
+            sat.IssuedAt = (string)payload["iat"];
             sat.Subject = (string)payload["sub"];
+          
             sat.Audience = (string)payload["aud"];
-            sat.ExpireAt = (int)payload["exp"];
-            sat.NotBefore = (int)payload["nbf"];
+            sat.ExpireAt = (string)payload["exp"];
+            sat.NotBefore = (string)payload["nbf"];
 
+            if (payload["sub_type"] != null) sat.PrincipalType = (string)payload["sub_type"];
             if (payload["name"] != null) sat.Name = (string)payload["name"];
             if (payload["given_name"] != null) sat.GivenName = (string)payload["given_name"];
             if (payload["family_name"] != null) sat.FamilyName = (string)payload["family_name"];
             if (payload["preferred_username"] != null) sat.PreferredUserName = (string)payload["preferred_username"];
             if (payload["email"] != null) sat.Email = (string)payload["email"];
-            if (payload["email_verified"] != null) sat.EmailVerified = (bool)payload["email_verified"];
-            if (payload["roles"] != null) sat.Roles = ((JArray)payload["roles"]).Select(i => (string)i).ToArray();
+            if (payload["email_verified"] != null) sat.EmailVerified = (string)payload["email_verified"];
+            if (payload["role"] != null) sat.Role = (string)payload["role"];
             if (payload["zoneinfo"] != null) sat.ZoneInfo = (string)payload["zoneinfo"];
 
             return sat;
@@ -168,8 +157,15 @@ namespace Naveego
 
         private static string URLDecode(string str)
         {
-            return str.Replace('-', '+')
-                .Replace('_', '/');
+            // handle URL safe base64
+            str = str.Replace('-', '+');
+            str = str.Replace('_', '/');
+            switch (str.Length % 4)
+            {
+                case 2: str += "=="; break;
+                case 3: str += "="; break;
+            }
+            return str;
         }
     }
 }
