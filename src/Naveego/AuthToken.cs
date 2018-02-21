@@ -73,6 +73,8 @@ namespace Naveego
 
         public string IssuedAt { get; internal set; }
 
+        public string TenantId { get; internal set; }
+
         public string Role { get; set; }
 
         public string[] Roles
@@ -137,7 +139,8 @@ namespace Naveego
             sat.Issuer = (string)payload["iss"];
             sat.IssuedAt = (string)payload["iat"];
             sat.Subject = (string)payload["sub"];
-          
+
+            sat.TenantId = (string)payload["tid"];
             sat.Audience = (string)payload["aud"];
             sat.ExpireAt = (string)payload["exp"];
             sat.NotBefore = (string)payload["nbf"];

@@ -53,6 +53,9 @@ namespace Naveego.Sync
                 case "dataquality.dimension":
                     type = typeof(Dimension);
                     break;
+                case "sync.client.reset":
+                    type = typeof(ResetClientMessage);
+                    break;
             }
 
             if (json["content"] != null && json["content"].Type == JTokenType.Object)

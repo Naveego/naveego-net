@@ -78,7 +78,7 @@ namespace Naveego.DataQuality
 
         public DateTime? LastException { get; set; }
 
-        public string TemplateList { get; set; }
+        public string Dimension { get; set; }
 
         public VirtualCheckOverride[] VirtualOverrides { get; set; }
 
