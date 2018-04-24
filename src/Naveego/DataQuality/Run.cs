@@ -89,6 +89,12 @@ namespace Naveego.DataQuality
 
         public uint CountQueryChecksum { get; set; }
 
+        public string Schedule { get; set; }
+
+        public bool QueryChanged { get; set; }
+
+        public bool ScheduleChanged { get; set; }
+
         public string ErrorMessage { get; set; }
 
         public string SourceInfo { get; set; }
