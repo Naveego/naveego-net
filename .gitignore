@@ -21,6 +21,7 @@ x86/
 build/
 bld/
 [Bb]in/
+lib/
 [Oo]bj/
 
 # Visual Studo 2015 cache/options directory
@@ -144,6 +145,8 @@ publish/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
 
+
+
 # Windows Azure Build Output
 csx/
 *.build.csdef
@@ -195,3 +198,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+

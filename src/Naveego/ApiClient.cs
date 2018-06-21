@@ -84,18 +84,18 @@ namespace Naveego
 
         public void MarkDelivered(WriteBackData writeBackData)
         {
-            MarkDelievered(writeBackData);
-        }
-        
-        [Obsolete]
-        public void MarkDelievered(WriteBackData writeBackData)
-        {
             var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBackData.WritebackId));
             ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
             {
                 Method = "POST",
                 Data = new JObject(new JProperty("id", writeBackData.Id))
-            });
+            });        
+        }
+        
+        [Obsolete]
+        public void MarkDelievered(WriteBackData writeBackData)
+        {
+            MarkDelivered(writeBackData);
         }
         
         public void MarkFailed(WriteBackData writeBackData, string reason)

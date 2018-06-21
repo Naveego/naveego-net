@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Naveego</id>
+    <version>3.14.1</version>
+    <title>Naveego</title>
+    <authors>Derek Smith</authors>
+    <owners>Derek Smith</owners>
+    <licenseUrl>http://www.naveego.com/terms</licenseUrl>
+    <iconUrl>http://naveegomedia.blob.core.windows.net/downloads/NaveegoLogo.png</iconUrl>
+    <projectUrl>http://www.naveego.com</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Naveego REST API Library</description>
+    <copyright>Copyright 2017</copyright>
+    <tags>naveego</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+    </dependencies>
+  </metadata>
+</package>
