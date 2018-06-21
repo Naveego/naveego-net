@@ -82,6 +82,12 @@ namespace Naveego
             return result.Data;
         }
 
+        public void MarkDelivered(WriteBackData writeBackData)
+        {
+            MarkDelievered(writeBackData);
+        }
+        
+        [Obsolete]
         public void MarkDelievered(WriteBackData writeBackData)
         {
             var resourceUri = ToResourceUri(string.Format("sync/writebacks/{0}/queued", writeBackData.WritebackId));
@@ -89,6 +95,16 @@ namespace Naveego
             {
                 Method = "POST",
                 Data = new JObject(new JProperty("id", writeBackData.Id))
+            });
+        }
+        
+        public void MarkFailed(WriteBackData writeBackData, string reason)
+        {
+            var resourceUri = ToResourceUri($"sync/writebacks/{writeBackData.WritebackId}/queued/{writeBackData.Id}/failure");
+            ExecuteRequest<SyncClient>(resourceUri, new ApiRequestOptions
+            {
+                Method = "POST",
+                Data = new JObject(new JProperty("reason", reason))
             });
         }
 
