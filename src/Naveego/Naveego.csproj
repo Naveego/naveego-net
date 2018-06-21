@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="ApiClientBase.cs" />
     <Compile Include="ApiRequestOptions.cs" />
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="BusinessApplication.cs" />
     <Compile Include="BusinessApplicationRef.cs" />
     <Compile Include="DataQuality\Category.cs" />
